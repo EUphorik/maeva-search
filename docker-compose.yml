@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: poc-recherche-semantique-app
+    ports:
+      - "8502:8501"
+    env_file:
+      - .env
+    restart: always
+
+# Ajoutez s'il y a d'autres services comme OpenSearch ou Qdrant si la recette n'utilise pas des instances managées distantes.
